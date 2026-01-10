@@ -1,0 +1,156 @@
+:root {
+    --azul-uepg: #29AFE5;
+    --azul-hover: #f3faff;
+    --cinza: #949494;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--azul-hover);
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 5px 0px 25px rgb(0, 0, 0, 0.1);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 256px;
+    height: 100vh;
+}
+
+.nav h2 {
+    color: var(--cinza);
+    place-items: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 16px;
+}
+
+.nav h2:hover {
+    color: var(--azul-uepg);
+    border-radius: 16px;
+}
+
+.nav-content {
+    margin-left: 256px;
+    height: 100vh;
+    
+    background-color: var(--azul-hover);
+}
+
+.nav-content h1 {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 16px;
+}
+
+.nav-content p {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.nav-content > div {
+    display: none;
+}
+
+.nav-content > .active {
+    display: block;
+}
+
+.nav .active {
+    color: var(--azul-uepg);
+    background-color: var(--azul-hover);
+    border-radius: 16px;
+}
+
+.pdf-carousel {
+    text-align: center;
+}
+
+.pdf-carousel canvas {
+    margin: 20px 0px;
+    max-width: 850px;
+    background: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 50px;
+}
+
+.controls button {
+    background: var(--azul-uepg);
+    border: none;
+    color: white;
+    padding: 8px 14px 11px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.controls button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#soon {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    opacity: 0.3;
+}
+
+.banner {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    transform: translateY(-410px);
+    filter: brightness(30%);
+}
+
+.banner h1 {
+    position: absolute;
+    margin: 0px;
+    top: 40%;
+    color: white;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin: 40px 50px;
+}
+
+hr {
+    border: none;
+    height: 0.5px;
+    background-color: #bebebe;
+    margin: 0px 40px;
+    width: calc(100% - 80px);
+}
