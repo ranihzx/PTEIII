@@ -1,5 +1,9 @@
-//Menu lateral
+//Menu lateral (desktop)
 const navs = document.querySelectorAll('.nav h2');
+
+//Menu superior (mobile)
+const navsMobile = document.querySelectorAll('.nav-mobile h2');
+
 const navsContent = document.querySelectorAll('.nav-content > div');
 
 //PDF.js
@@ -60,7 +64,7 @@ function renderCarousel(carousel) {
     };
 }
 
-//Menu e renderização de PDFs
+//Menu e renderização de PDFs (desktop)
 navs.forEach((nav, index) => {
     nav.addEventListener('click', () => {
 
@@ -68,6 +72,22 @@ navs.forEach((nav, index) => {
         navs.forEach(nav => nav.classList.remove("active"));
 
         navs[index].classList.add("active");
+        navsContent[index].classList.add("active");
+
+        navsContent[index]
+            .querySelectorAll(".pdf-carousel")
+            .forEach(renderCarousel);
+    });
+});
+
+//Menu e renderização de PDFs (mobile)
+navsMobile.forEach((nav, index) => {
+    nav.addEventListener('click', () => {
+
+        navsContent.forEach(content => content.classList.remove("active"));
+        navsMobile.forEach(nav => nav.classList.remove("active"));
+
+        navsMobile[index].classList.add("active");
         navsContent[index].classList.add("active");
 
         navsContent[index]

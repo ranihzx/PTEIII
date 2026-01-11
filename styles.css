@@ -1,5 +1,5 @@
 :root {
-    --azul-uepg: #29AFE5;
+    --azul-uepg: #314A73;
     --azul-hover: #f3faff;
     --cinza: #949494;
 }
@@ -13,6 +13,10 @@
 
 body {
     background-color: var(--azul-hover);
+}
+
+h1 {
+    margin: 40px 50px;
 }
 
 .container {
@@ -45,25 +49,40 @@ body {
 
 .nav h2:hover {
     color: var(--azul-uepg);
+}
+
+.nav .active {
+    color: var(--azul-uepg);
+    background-color: var(--azul-hover);
     border-radius: 16px;
+}
+
+.nav-mobile {
+    display: none;
+}
+
+.banner {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background-color: var(--azul-uepg);
+}
+
+.banner h1 {
+    position: absolute;
+    margin: 0px;
+    top: 40%;
+    right: 0;
+    color: white;
+    font-size: 2rem;
+    width: calc(100% - 256px);
+    text-align: center;
 }
 
 .nav-content {
     margin-left: 256px;
     height: 100vh;
-    
     background-color: var(--azul-hover);
-}
-
-.nav-content h1 {
-    font-size: 28px;
-    line-height: 38px;
-    margin-bottom: 16px;
-}
-
-.nav-content p {
-    font-size: 18px;
-    line-height: 28px;
 }
 
 .nav-content > div {
@@ -74,10 +93,8 @@ body {
     display: block;
 }
 
-.nav .active {
-    color: var(--azul-uepg);
-    background-color: var(--azul-hover);
-    border-radius: 16px;
+.nav-content h1 {
+    font-size: 28px;
 }
 
 .pdf-carousel {
@@ -85,10 +102,11 @@ body {
 }
 
 .pdf-carousel canvas {
-    margin: 20px 0px;
-    max-width: 850px;
+    max-width: calc(100% - 100px);
     background: white;
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    margin: 0px;
+    padding: 0px;
 }
 
 .controls {
@@ -96,7 +114,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 16px;
-    padding-bottom: 50px;
+    padding: 50px 0px;
 }
 
 .controls button {
@@ -104,7 +122,7 @@ body {
     border: none;
     color: white;
     padding: 8px 14px 11px;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
 }
@@ -114,6 +132,15 @@ body {
     cursor: not-allowed;
 }
 
+hr {
+    border: none;
+    height: 0.5px;
+    background-color: #bebebe;
+    width: calc(100% - 80px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #soon {
     text-align: center;
     margin-top: 50px;
@@ -121,38 +148,89 @@ body {
     opacity: 0.3;
 }
 
-.banner {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
+@media screen and (max-width: 1225px) {
+
+    h1 {
+        margin: 25px 30px 25px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        z-index: 1;
+        padding: 8px;
+        background-color: white;
+        box-shadow: 5px 0px 25px rgb(0, 0, 0, 0.1);
+        width: auto;
+        height: auto;
+        overflow-x: auto;
+    }
+
+    .nav-mobile h2 {
+        color: var(--cinza);
+        text-align: center;
+        font-size: 16px;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 8px;
+        max-width: 200px;
+        white-space: nowrap;
+    }
+
+    .nav-mobile h2:hover {
+        color: var(--azul-uepg);
+    }
+
+    .nav-mobile .active {
+        color: var(--azul-uepg);
+        background-color: var(--azul-hover);
+        border-radius: 16px;
+    }
+
+    .banner {
+        top: 48px;
+        height: 140px;
+    }
+
+    .bannerMobile {
+        margin-bottom: 70px;
+    }
+
+    .banner h1 {
+        width: 100%;
+        font-size: 1.8rem;
+        align-items: center;
+    }
+
+    .nav-content {
+        margin: 0px;
+    }
+
+    .nav-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .pdf-carousel canvas {
+        margin: 0px 20px;
+        max-width: calc(100% - 60px);
+    }
+
+    .controls {
+        padding: 25px;
+    }
+
+    hr {
+        width: calc(100% - 60px);
+    }
 }
 
-.banner img {
-    filter: brightness(30%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 88%;
-}
-
-.banner h1 {
-    position: absolute;
-    margin: 0px;
-    top: 40%;
-    color: white;
-    font-size: 2rem;
-    width: 100%;
-    text-align: center;
-}
-
-h1 {
-    margin: 40px 50px;
-}
-
-hr {
-    border: none;
-    height: 0.5px;
-    background-color: #bebebe;
-    margin: 0px 40px;
-    width: calc(100% - 80px);
+@media screen and (max-width: 580px) {
+    .banner h1 {
+        top: 25%;
+    }
 }
