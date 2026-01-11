@@ -148,6 +148,20 @@ hr {
     opacity: 0.3;
 }
 
+footer {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    text-align: center;
+    padding: 5px 0px 20px;
+    color: var(--cinza);
+}
+
+.name {
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
 @media screen and (max-width: 1225px) {
 
     h1 {
