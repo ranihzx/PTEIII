@@ -160,15 +160,14 @@ hr {
 
     .nav-mobile {
         display: flex;
-        flex-direction: row;
+        padding: 8px;
         position: fixed;
         z-index: 1;
-        padding: 8px;
         background-color: white;
         box-shadow: 5px 0px 25px rgb(0, 0, 0, 0.1);
-        width: auto;
-        height: auto;
+        width: 100%;
         overflow-x: auto;
+        white-space: nowrap;
     }
 
     .nav-mobile h2 {
@@ -178,8 +177,7 @@ hr {
         text-transform: uppercase;
         cursor: pointer;
         padding: 8px;
-        max-width: 200px;
-        white-space: nowrap;
+        width: auto;   
     }
 
     .nav-mobile h2:hover {
